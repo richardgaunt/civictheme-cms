@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Template for the YS Base counter block.
+ *
+ * Available variables:
+ * - counter_value: The initial counter value.
+ */
+#}
+<div class="ct-cms-base-counter-block" data-ct-cms-base-counter>
+  <div class="ct-cms-base-counter-display">
+    <span class="ct-cms-base-counter-label">Counter:</span>
+    <span class="ct-cms-base-counter-value" data-counter-value>{{ counter_value }}</span>
+  </div>
+  <div class="ct-cms-base-counter-controls">
+    <button class="ct-cms-base-counter-btn ct-cms-base-counter-btn--decrement" data-counter-action="decrement" aria-label="Decrease counter">
+      <span class="ct-cms-base-counter-btn-text">-</span>
+    </button>
+    <button class="ct-cms-base-counter-btn ct-cms-base-counter-btn--increment" data-counter-action="increment" aria-label="Increase counter">
+      <span class="ct-cms-base-counter-btn-text">+</span>
+    </button>
+  </div>
+  <div class="ct-cms-base-counter-actions">
+    <button class="ct-cms-base-counter-btn ct-cms-base-counter-btn--reset" data-counter-action="reset">Reset</button>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+name: CivicTheme CMS Demo Base
+type: module
+description: Base feature for CivicTheme CMS Demo site.
+core_version_requirement: ^11
+package: ct_cms
