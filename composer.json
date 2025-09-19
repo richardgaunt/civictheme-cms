@@ -11,7 +11,7 @@
         "drupal/civictheme_content_default": "^0.1.0",
         "drupal/civictheme_drupal_cms": "^0.1.0",
         "drupal/civictheme_drupal_cms_preinstall": "^0.1.0",
-        "drupal/cms": "^1.0",
+        "drupal/cms": "^1.2.5",
         "drupal/coffee": "^2",
         "drupal/config_split": "^2",
         "drupal/config_update": "^2@alpha",
@@ -19,6 +19,7 @@
         "drupal/core-recommended": "~11.2.3",
         "drupal/environment_indicator": "^4.0",
         "drupal/pathauto": "^1.13",
+        "drupal/recipe_installer_kit": "1.0.0-alpha6",
         "drupal/redirect": "^1.12",
         "drupal/robotstxt": "^1.6",
         "drupal/search_api": "^1.38",
@@ -118,13 +119,15 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-recipe-unpack": true,
+            "drupal/core-vendor-hardening": true,
             "ergebnis/composer-normalize": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "pyrech/composer-changelogs": true,
             "tbachert/spi": true,
-            "drupal/core-project-message": true,
             "wikimedia/composer-merge-plugin": true
         },
         "discard-changes": true,
@@ -213,7 +216,6 @@
             "recurse": true,
             "replace": true,
             "require": [
-                "vendor/drupal/cms/composer.json"
             ]
         }
     },

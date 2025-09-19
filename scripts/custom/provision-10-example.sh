@@ -38,14 +38,11 @@ if echo "${environment}" | grep -q -e dev -e stage -e ci -e local; then
   task "Setting site name."
   drush php:eval "\Drupal::service('config.factory')->getEditable('system.site')->set('name', 'CivicTheme CMS Demo')->save();"
 
-  # Enable contrib modules.
-  task "Installing contrib modules."
-  drush pm:install admin_toolbar coffee config_split config_update media environment_indicator pathauto redirect robotstxt shield stage_file_proxy
 
-  # Enable custom site module and run its deployment hooks.
-  #
-  # Note that deployment hooks for already enabled modules have run in the
-  # parent "provision.sh" script.
+  # Install site dependencies
+  drush recipe /app/recipes/civictheme_drupal_cms_preinstall
+  drush recipe /app/recipes/recipes/recipes/civictheme_drupal_cms
+  drush recipe /app/recipes/recipes/civictheme_content_default
 
   task "Running deployment hooks."
   drush deploy:hook
