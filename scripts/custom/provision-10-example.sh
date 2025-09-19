@@ -41,9 +41,12 @@ if echo "${environment}" | grep -q -e dev -e stage -e ci -e local; then
 
   # Install site dependencies
   drush recipe /app/recipes/civictheme_drupal_cms_preinstall
-  drush recipe /app/recipes/recipes/recipes/civictheme_drupal_cms
-  drush recipe /app/recipes/recipes/civictheme_content_default
-
+  drush recipe /app/recipes/civictheme_drupal_cms
+  drush recipe /app/recipes/civictheme_content_default
+  pushd /app/web/themes/custom/civictheme_subtheme
+  npm install
+  npm run build
+  popd
   task "Running deployment hooks."
   drush deploy:hook
 
