@@ -47,6 +47,11 @@ if echo "${environment}" | grep -q -e dev -e stage -e ci -e local; then
   npm install
   npm run build
   popd
+  task "Installing civictheme_subtheme theme."
+  drush theme:enable civictheme_subtheme
+
+  task "Setting civictheme_subtheme as a default theme."
+  drush config-set system.theme default civictheme_subtheme
   task "Running deployment hooks."
   drush deploy:hook
 
